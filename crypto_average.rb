@@ -15,4 +15,9 @@ command :tail do |c|
   end
 end
 
+desc 'List the crypto pairs that Poloniex supports'
+command :list do |c|
+  c.action { Poloniex.display_supported_pairs }
+end
+
 exit run(ARGV)

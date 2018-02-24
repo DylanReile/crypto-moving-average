@@ -10,6 +10,10 @@ module Poloniex
     end
   end
 
+  def self.display_supported_pairs
+    puts current_pair_data.keys
+  end
+
   def self.current_price(crypto_pair)
     pair = current_pair_data[crypto_pair]
     raise ArgumentError, "#{crypto_pair} not supported by Poloniex" if pair.nil?
